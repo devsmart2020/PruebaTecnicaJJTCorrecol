@@ -1,9 +1,16 @@
+using PruebaTecnica.Cliente.Services.Implementation;
+using PruebaTecnica.Cliente.Services.Interfaces;
 using PruebaTecnicaJJT.Transversal;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<IClienteService, ClienteService>();
+builder.Services.AddTransient<ITipoIdentificacionService, TipoIdentificacionService>();
+builder.Services.AddTransient<IPaisService, PaisService>();
+builder.Services.AddTransient<IDepartamentoService, DepartamentoService>();
+builder.Services.AddTransient<IMunicipioService, MunicipioService>();
 
 Configuration.ApiUrl = builder.Configuration.GetConnectionString("ApiUrl");
 

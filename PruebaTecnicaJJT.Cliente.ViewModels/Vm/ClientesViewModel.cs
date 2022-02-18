@@ -34,6 +34,7 @@ namespace PruebaTecnicaJJT.Cliente.ViewModels.Vm
             ListarClientesCommand = new RelayCommand(async () => await ListarClientes());
             EliminarClienteCommand = new RelayCommand(async () => await EliminarCliente());
             _service = new ClienteService();
+            //ListarClientes().ConfigureAwait(true);
         }
         #endregion
 
@@ -115,7 +116,6 @@ namespace PruebaTecnicaJJT.Cliente.ViewModels.Vm
             set => SetProperty(ref _idMunicipio, value);
         }
 
-
         public ObservableCollection<DTOClientesGetAll> ListadoClientes
         {
             get => _listadoClientes;
@@ -140,7 +140,7 @@ namespace PruebaTecnicaJJT.Cliente.ViewModels.Vm
             {
                 DTOClientes cliente = new()
                 {
-                    ClnId = IdCliente,
+                    ClnId = default,
                     ClnTpoId = IdTipoDocumento,
                     ClnNumeroIdentificacion = NumeroDocumento,
                     ClnNombres = Nombres,
@@ -179,7 +179,7 @@ namespace PruebaTecnicaJJT.Cliente.ViewModels.Vm
             }
         }
 
-        private async Task ListarClientes()
+        public async Task ListarClientes()
         {
             IsBusy = true;
             try

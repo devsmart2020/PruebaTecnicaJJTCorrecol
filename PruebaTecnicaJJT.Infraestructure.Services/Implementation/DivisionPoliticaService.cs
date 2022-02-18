@@ -45,9 +45,11 @@ namespace PruebaTecnicaJJT.Infraestructure.Services.Implementation
             return (IEnumerable<TEntity>)await _dALGeneric.FindListById(entity, nameParameter, valueParam);
         }
 
-        public Task<IEnumerable<TDto>> GetAll<TDto>()
+        public async Task<IEnumerable<TDto>> GetAll<TDto>()
         {
-            throw new NotImplementedException();
+            object objName = typeof(TDto).Name;
+            objName = "DivisionPoliticaColombia";
+            return _mapper.Map<IEnumerable<TDto>>(await _dALGeneric.GetAll(objName));
         }
         #endregion
     }

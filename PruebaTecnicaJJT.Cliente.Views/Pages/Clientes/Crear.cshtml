@@ -1,0 +1,125 @@
+﻿@page
+@using PruebaTecnicaJJT.Business.DTOs
+@model PruebaTecnicaJJT.Cliente.Views.Pages.Clientes.CrearModel
+@{
+    ViewData["Title"] = "Crear Cliente";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+        <div class="text-info">Crear un nuevo Cliente</div>
+            <form method="post">              
+
+                 <div class="mb-3">
+                    <label class="form-label">Tipo de Identificación</label>
+                   
+                    <select id="cmbTipoIdentificacion" class="form-control" data-toggle="tooltip" 
+                        data-trigger="hover" data-placement="top"
+                        data-title="Tipo Identificación">
+                                    @foreach (var item in Model.TiposIdent)
+                                    {
+                                        <option value="@item.TpoIdnId">@item.TpoIdnNombre</option>
+                                    }
+                     </select>                
+                    <span asp-validation-for="Cliente.ClnTpoId" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Nro Documento</label>
+                    <input asp-for="Cliente.ClnNumeroIdentificacion" class="form-control" placeholder="Nro Documento" />
+                    <span asp-validation-for="Cliente.ClnNumeroIdentificacion" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Nombres</label>
+                    <input asp-for="Cliente.ClnNombres" class="form-control" placeholder="Nombres" />
+                    <span asp-validation-for="Cliente.ClnNombres" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Apellidos</label>
+                    <input asp-for="Cliente.ClnApellidos" class="form-control" placeholder="Apellidos" />
+                    <span asp-validation-for="Cliente.ClnApellidos" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Email</label>
+                    <input asp-for="Cliente.ClnEmail" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Cliente.ClnEmail" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Teléfono</label>
+                    <input asp-for="Cliente.ClnTelefono" class="form-control" placeholder="Teléfono" />
+                    <span asp-validation-for="Cliente.ClnTelefono" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label class="form-label">TelAlterno</label>
+                    <input asp-for="Cliente.ClnTelefonoAlterno" class="form-control" placeholder="TelAlterno"/>
+                    <span asp-validation-for="Cliente.ClnTelefonoAlterno" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label  class="form-label">Razón Social</label>
+                    <input asp-for="Cliente.ClnRazonSocial" class="form-control" placeholder="Razón Social" />
+                    <span asp-validation-for="Cliente.ClnRazonSocial" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label class="form-label">País</label>
+
+                     <select id="cmbPais" class="form-control" data-toggle="tooltip" 
+                        data-trigger="hover" data-placement="top"
+                        data-title="País">
+                                    @foreach (var item in Model.Paises)
+                                    {
+                                        <option value="@item.PaisCodigo">@item.PaisNombre</option>
+                                    }
+                     </select>
+                    <span asp-validation-for="Cliente.ClnPaisCodigo" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label class="form-label">Departamento</label>
+                     <select id="cmbDepartamento" class="form-control" data-toggle="tooltip" 
+                        data-trigger="hover" data-placement="top"
+                        data-title="Departamento">
+                                    @foreach (var item in Model.Paises)
+                                    {
+                                        <option value="@item.PaisCodigo">@item.PaisNombre</option>
+                                    }                                    
+                     </select>
+
+                    @*<input asp-for="Cliente.ClnDptColCodigoDane" class="form-control" placeholder="Departamento" />*@
+                    <span asp-validation-for="Cliente.ClnDptColCodigoDane" class="text-danger"></span>
+                </div>
+
+                 <div class="mb-3">
+                    <label class="form-label">Ciudad/Municipio</label>
+                     <select id="cmbMunicipio" class="form-control" data-toggle="tooltip" 
+                        data-trigger="hover" data-placement="top"
+                        data-title="Municipio>
+                                    @foreach (var item in Model.Paises)
+                                    {
+                                        <option value="@item.PaisCodigo">@item.PaisNombre</option>
+                                    }
+                     </select>
+                    @*<input asp-for="Cliente.ClnDvsPltColCodigoDane" class="form-control" placeholder="Municipio" />*@
+                    <span asp-validation-for="Cliente.ClnDvsPltColCodigoDane" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear Cliente</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+
+</div>

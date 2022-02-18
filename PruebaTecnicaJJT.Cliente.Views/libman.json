@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "pivottable@2.23.0",
+      "destination": "wwwroot/lib/pivottable/",
+      "files": [
+        "pivot.min.js",
+        "pivot.min.css"
+      ]
+    }
+  ]
+}

@@ -26,6 +26,13 @@ namespace PruebaTecnicaJJT.Web.Controllers.DivisionPolitica
         {
             return Ok(await _service.FindListById<object>(value));
         }
+
+        [AllowAnonymous]
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _service.GetAll<object>());
+        }
         #endregion
     }
 }

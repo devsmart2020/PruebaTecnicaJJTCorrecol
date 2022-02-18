@@ -1,0 +1,19 @@
+﻿@page
+@model PruebaTecnicaJJT.Cliente.Views.Pages.Clientes.ActualizarModel
+@{
+}
+
+<form method="post">
+    <input asp-for ="@Model.Cliente.ClnId" placeholder="Id" />
+    <input asp-for ="@Model.Cliente.ClnTpoId" placeholder="Tipo Identificación" />
+    <input asp-for ="@Model.Cliente.ClnNumeroIdentificacion" placeholder="Nro Documento" />
+    <input asp-for ="@Model.Cliente.ClnNombres" placeholder="Nombres" />
+    <input asp-for ="@Model.Cliente.ClnApellidos" placeholder="Apellidos" />
+    <input asp-for ="@Model.Cliente.ClnEmail" placeholder="Email" />
+    <input asp-for ="@Model.Cliente.ClnTelefono" placeholder="Teléfono" />
+    <input asp-for ="@Model.Cliente.ClnTelefonoAlterno" placeholder="TelAlterno" />
+    <input asp-for ="@Model.Cliente.ClnRazonSocial" placeholder="Razón Social" />
+    <input asp-for ="@Model.Cliente.ClnPaisCodigo" placeholder="País" />
+    <input asp-for ="@Model.Cliente.ClnDptColCodigoDane" placeholder="Departamento" />
+    <input asp-for ="@Model.Cliente.ClnDvsPltColCodigoDane" placeholder="Municipio" />
+</form>

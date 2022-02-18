@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Clientes\" />
     <Folder Include="Pages\Departamentos\" />
   </ItemGroup>
 

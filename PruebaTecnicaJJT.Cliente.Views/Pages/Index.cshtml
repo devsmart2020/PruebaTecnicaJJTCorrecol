@@ -4,7 +4,29 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form method="post">
+    <input type="text" name="param1" placeholder="Datos"/>
+    <input type="submit" value="Enviar"/>
+</form>
+
+@*<form method="post">
+    <h1>Formulario Cliente</h1>
+    <input asp-for="@Model.Cliente.ClnId" placeholder="Id"/>
+    <input asp-for="@Model.Cliente.ClnNombres" placeholder="Nombres"/>
+    <input asp-for="@Model.Cliente.ClnApellidos" placeholder="Apellidos"/>
+    <input type="submit" value="Enviar" asp-page-handler="Persona"/>
+</form>
+
+<form method="post">
+    <h1>Formulario Cliente y Ciudad</h1>
+    <input asp-for="@Model.Cliente.ClnId" placeholder="Id"/>
+    <input asp-for="@Model.Cliente.ClnNombres" placeholder="Nombres"/>
+    <input asp-for="@Model.Cliente.ClnApellidos" placeholder="Apellidos"/>
+
+    <h4>Ciudad</h4>
+    <input asp-for="@Model.Pais.PaisCodigo" placeholder="Id"/>
+    <input asp-for="@Model.Pais.PaisNombre" placeholder="País"/>
+
+    <input type="submit" value="Enviar" asp-page-handler="PersonaPais"/>
+</form>
+*@

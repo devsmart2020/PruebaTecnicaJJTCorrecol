@@ -1,6 +1,7 @@
 ﻿using Base.Infraestructure.Services.ApiClient.Implementation;
 using PruebaTecnica.Cliente.Services.Interfaces;
 using PruebaTecnicaJJT.Business.DTOs;
+using PruebaTecnicaJJT.Transversal;
 
 namespace PruebaTecnica.Cliente.Services.Implementation
 {
@@ -9,7 +10,7 @@ namespace PruebaTecnica.Cliente.Services.Implementation
         #region Ctor
         public ClienteService()
         {
-
+            BaseUrl = Configuration.ApiUrl;
         }
         #endregion
 

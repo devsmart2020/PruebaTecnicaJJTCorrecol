@@ -1,0 +1,118 @@
+﻿@page
+@model ListaModel
+@{
+    ViewData["Title"] = "Lista de Clientes";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-info">Lista de Clientes</h2>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-secondary" asp-page="/Clientes/Crear">Crear nuevo Cliente</a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    @if(Model.ClientesList.Count > 0)
+    {
+        <table id="tblClientes" class="table table-stripe table-bordered" style="width:auto;">
+            <thead>
+                 <tr>
+                    <th class="d-none d-lg-table-cell">
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].TipoIdentificacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Identificacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Nombres)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Apellidos)
+                    </th>
+                    <th class="d-none d-md-table-cell text-center">
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].TelAlterno)
+                    </th>
+                    <th class="d-none d-lg-table-cell">
+                        @Html.DisplayNameFor(model => model.ClientesList[0].RazonSocial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Departamento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClientesList[0].Municipio)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var clientes in Model.ClientesList)
+                {
+                       <tr>
+                            <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.Id)
+                            </td>
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.TipoIdentificacion)
+                            </td>
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.Identificacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => clientes.Nombres)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => clientes.Apellidos)
+                            </td>
+                             <td>
+                                @Html.DisplayFor(modelItem => clientes.Email)
+                            </td>
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.Telefono)
+                            </td>
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.TelAlterno)
+                            </td>
+                             <td>
+                                @Html.DisplayFor(modelItem => clientes.RazonSocial)
+                            </td>        
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.Departamento)
+                            </td>
+                             <td class="d-none d-lg-table-cell">
+                                @Html.DisplayFor(modelItem => clientes.Municipio)
+                            </td>
+                            <td>
+                                <a class="btn btn-success" asp-page="Crear" asp-route-id="@clientes.Id"></a>
+                                <a class="btn btn-success" asp-page="Editar" asp-route-id="@clientes.Id"></a>
+                            </td>
+                         
+                </tr>              
+                }
+
+              
+            </tbody>
+        </table>    
+    }
+    else
+    {
+        <p>No hay clientes</p>
+    }
+
+</div>
+
+
+
